@@ -20,7 +20,7 @@ def index():
         db.session.commit()
 
         print 'Data Saved'
-        return ('/list')
+        return redirect ('/list')
     else:
         print 'Error Here'
 
