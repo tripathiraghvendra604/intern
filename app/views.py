@@ -25,3 +25,8 @@ def index():
         print 'Error Here'
 
     return render_template('form.html', form = form)
+
+@app.route('/list', methods=['GET', 'POST'])
+def user_data():
+    data = User.query.all()
+    return render_template('data.html', data=data)

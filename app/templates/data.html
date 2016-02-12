@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ title }}</title>
+</head>
+<body>
+    {% for user in data %}
+    <ul>
+    <div><li>
+        <h3>Name: {{ user.name }}</h3>
+        <b>Contact:</b> {{ user.contact }}<br>
+        <b>Email: </b> {{ user.email }}<br>
+        <b>Company: </b>{{ user.company }}<br>
+       <b>City:</b>  {{ user.city }}<br><hr>
+    </li></div>
+        </ul>
+    {% endfor %}
+</body>
+</html>
