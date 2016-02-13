@@ -7,12 +7,13 @@
     {% for user in data %}
     <ul>
     <div><li>
-        <h3>Name: {{ user.name }}</h3>
-        <b>Contact:</b> {{ user.contact }}<br>
-        <b>Email: </b> {{ user.email }}<br>
-        <b>Company: </b>{{ user.company }}<br>
-       <b>City:</b>  {{ user.city }}<br><hr>
-    </li></div>
+        <h3>Name: {{ user[0].name }}</h3>
+        <b>Contact:</b> {{ user[0].contact }}<br>
+        <b>Email: </b> {{ user[0].email }}<br>
+        <b>Company: </b>{{ user[0].company }}<br>
+       <b>City:</b>  {{ user[0].city }}<br>
+        <a href="/delete/{{ user[1]}}" >Delete</a>
+    </li></div><hr>
         </ul>
     {% endfor %}
 </body>

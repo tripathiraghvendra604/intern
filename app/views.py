@@ -28,5 +28,16 @@ def index():
 
 @app.route('/list', methods=['GET', 'POST'])
 def user_data():
-    data = User.query.all()
-    return render_template('data.html', data=data)
+    datas = User.query.all()
+    data = []
+    for d in datas:
+        data.append((d, d.id))
+    return render_template('data.html', data=data, id=id)
+
+@app.route('/delete/<id>')
+def delete(id):
+    print id
+    user = User.query.get(id)
+    db.session.delete(user)
+    db.session.commit()
+    return redirect('/list')
